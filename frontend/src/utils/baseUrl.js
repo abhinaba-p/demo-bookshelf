@@ -1,5 +1,5 @@
 const getBaseUrl = () => {
-    return "http://localhost:3000"
+    return "https://bookstore-1rzv.onrender.com"
 }
 
 export default getBaseUrl;
