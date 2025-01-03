@@ -11,7 +11,7 @@ const userRoutes = require("./src/users/user.route")
 const stripeRoutes = require("./src/stripe/stripe.route")
 
 const app = express();
-const port = 3000
+const port = process.env.PORT || 3000;
 
 // middleware
 app.use(express.json())
