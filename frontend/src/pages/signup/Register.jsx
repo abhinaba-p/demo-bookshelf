@@ -27,22 +27,19 @@ const Register = () => {
     const handleSubmit = async () => {
 
         try {
-            await registerUser(email, password)
-                .then(async (res) => {
-                    var userData = {
-                        displayName: username,
-                        email: res.user.email,
-                        photoURL: null
-                    }
-                    showSnackbar(`Welcome ${username}`, 'success')
-                    await addUser(userData).unwrap();
-                    navigate('/')
-                }).catch(() => {
-                    showSnackbar('Invalid Credentials or User exists with this Email', 'error')
-                });
-        } catch (error) {
-            showSnackbar(`Error ${error}`, 'error')
-        }
+            const res = await registerUser(email, password);
+            const userData = {
+            displayName: username,
+            email: res.user.email,
+            photoURL: null,
+            };
+            console.log(res);
+            showSnackbar(`Welcome ${username}`, 'success');
+            await addUser(userData).unwrap();
+            navigate('/');
+            } catch (error) {
+            console.log(error)
+            }
     }
 
     const handleGoogleAuth = async () => {
