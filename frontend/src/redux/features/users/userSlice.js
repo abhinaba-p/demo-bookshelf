@@ -3,7 +3,7 @@ import getBaseUrl from '../../../utils/baseUrl'
 
 const baseQuery = fetchBaseQuery({
     baseUrl: `${getBaseUrl()}/api/users`,
-    credentials: 'include',
+    // credentials: 'include',
     prepareHeaders: (Headers) => {
         const token = localStorage.getItem('token');
         if (token) {
